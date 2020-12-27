@@ -5,3 +5,20 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.createPages = async ({
+    graphql,
+    actions
+  }) => {
+  
+    const {
+      createPage
+    } = actions;
+    
+    const BaseTpl = require.resolve("./src/templates/base.tsx");
+    createPage({
+      path: '/',
+      component: BaseTpl,
+      context: {},
+    });
+  }
