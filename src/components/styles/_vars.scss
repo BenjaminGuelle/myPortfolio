@@ -1,0 +1,31 @@
+
+/*
+================================
+============ COLORS ============
+================================
+*/
+$black-bg : #0e0e0e;
+$white-txt : #F7F9F9;
+
+
+/*
+================================
+============ FONTS =============
+================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;700&display=swap');
+
+// Font :
+$global-font: 'Raleway', sans-serif;
+
+
+/*
+================================
+========== MEDIA QUERY =========
+================================
+*/
+
+$tablette : 481px;
+$tab-landscape : 768px;
+$laptop : 1024px;
+$desktop : 1600px; 

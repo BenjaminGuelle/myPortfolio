@@ -1,0 +1,35 @@
+@import '../styles/index.scss';
+
+header .nav {
+    height: 100px;
+    background-color: $black-bg;
+    position: relative;
+}
+
+.nav .nav-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: cadetblue;
+}
+
+.nav .ctn-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $white-txt;
+}

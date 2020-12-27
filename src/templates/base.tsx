@@ -12,7 +12,7 @@ const BaseTpl = ({ data }) => {
 
     return (
         <Layout>
-            <SEO lang="fr_FR" title='Accueil'/>
+            <SEO lang="fr_FR" title='Benjamin Guelle'/>
         </Layout>
     );
 };
