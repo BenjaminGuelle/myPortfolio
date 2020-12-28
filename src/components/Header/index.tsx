@@ -17,6 +17,12 @@ const Header = ({ siteTitle }) => {
                     <Link to="#" className="nav-link">Portfolio</Link>
                     <Link to="#" className="nav-link">Contact</Link>
                 </div>
+                <button type="button" className="btn-mob btn-menu">
+                    Menu
+                </button>
+                <button type="button" className="btn-mob btn-contact">
+                    Contact
+                </button>
             </nav>
         </header>
     )
