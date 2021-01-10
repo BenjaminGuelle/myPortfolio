@@ -11,10 +11,16 @@ const Header = ({ siteTitle }) => {
            </div>
            <div id="btn-menu" onClick={ () => {
                document.getElementById('btn-menu').classList.toggle('active-btn-toggle');
-               document.querySelector('.nav-bar').classList.toggle('active-nav');
+               document.querySelector('.nav-bar_mob').classList.toggle('active-nav');
            } }>
                <div className="line"></div>
            </div>
+           <nav className="nav-bar_mob">
+               <Link to="#" className="nav-link_mob">Accueil</Link>
+               <Link to="#" className="nav-link_mob">Bio</Link>
+               <Link to="#" className="nav-link_mob">Compétences</Link>
+               <Link to="#" className="nav-link_mob">Portfolio</Link>
+           </nav>
            <nav className="nav-bar">
                <Link to="#" className="nav-link">Accueil</Link>
                <Link to="#" className="nav-link">Bio</Link>

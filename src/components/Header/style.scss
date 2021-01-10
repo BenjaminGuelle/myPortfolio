@@ -16,17 +16,18 @@ header .logo {
     float: left;
     width: 60px;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
+    position: relative;
 }
 
 header .logo span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: $gris;
     font-family: $parisFont;
     font-weight: 700;
+
 }
 
 // BTN MENU
@@ -63,11 +64,11 @@ header #btn-menu .line::before {
     transition: transform 0.3s ease-in-out;
 }
 
-// NAV BAR
-header .nav-bar {
+// NAV BAR MOB
+header .nav-bar_mob {
     position: absolute;
     top: 50px;
-    left: -400px;
+    left: -800px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -78,14 +79,95 @@ header .nav-bar {
     padding: 30px 0;
 }
 
-header .nav-bar .nav-link {
+header .nav-bar_mob .nav-link_mob {
     color: $gris;
     width: 100%;
     padding: 5px;
     text-align: center;
 }
 
-header .nav-bar.active-nav {
+header .nav-bar_mob.active-nav {
     left: 0;
     transition: left 1s ease-in-out;
 }
+
+// NAV BAR 
+header .nav-bar {
+    display: none;
+}
+
+// ============= MEDIAS QUERIES =============
+@media screen and (min-width: 768px) {
+    header {
+        height: 80px;
+    }
+
+    header .logo {
+        width: 100px;
+    }
+
+    header .logo span {
+        font-size: 30px;
+    }
+
+    header #btn-menu {
+        width: 80px;
+        height: 80px;
+    }
+
+    header .nav-bar_mob {
+        top: 80px;
+        left: -1100px;
+    }
+
+    header .nav-bar_mob .nav-link_mob {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header #btn-menu {
+        display: none;
+    }
+
+    header .nav-bar_mob {
+        display: none;
+    }
+
+    header .nav-bar {
+        display: block;
+        margin-left: 100px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .nav-bar .nav-link {
+        position: relative;
+        height: 100%;
+        margin: 0 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $gris;
+    }
+
+    header .nav-bar .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $gris;
+        transition: width 0.2s ease-in-out;
+    }
+
+    header .nav-bar .nav-link:hover::after {
+        width: 100%;
+        transition: width 0.2s ease-in-out;
+    }
+
+}
+
