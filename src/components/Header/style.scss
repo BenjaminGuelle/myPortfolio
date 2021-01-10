@@ -1,147 +1,91 @@
 @import '../styles/index.scss';
 
 header {
-    position: relative;
-}
-
-/*
-    HEADER NAV CTN
-*/
-header .nav {
-    position: relative;
-    z-index: 5;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 50px;
-    background-color: $bg-color;
-    display: flex;
-    justify-content: space-between;
+    border-bottom: 1px solid $black;
+
 }
 
-/*
-    LOGO
-*/
-header .nav .nav-logo {
-    width: 80px;
+// LOGO
+header .logo {
+    float: left;
+    width: 60px;
     height: 100%;
-    background-color: $gris;
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
-/*
-    NAV CONTENT LINKS DESKTOP
-*/
-header .nav .ctn-links_L {
-    display: none;
-}
-
-/*
-    NAV CONTENT LINKS MOB
-*/
-header .ctn-links {
-    position: absolute;
-    z-index: 0;
-    top: -250px;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    background-color: $gris;
-    transition: top 1s ease-in-out;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
+header .logo span {
+    color: $gris;
+    font-family: $parisFont;
     font-weight: 700;
 }
 
-// => MENU OPENED
-header .ctn-links.opened {
-    top: 50px;
-    transition: top 1s ease-in-out;
-}
-
-/*
-    BTN MENU
-*/
-header .nav .btn-menu {
-    width: 60px;
-    height: 100%;
-    border: none;
-    background-color: $gris;
-    outline: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header .nav .btn-menu span {
-    width: 50%;
-    height: 3px;
-    background-color: $black;
+// BTN MENU
+header #btn-menu {
     position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
 }
 
-header .nav .btn-menu span::before {
+header #btn-menu .line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 2px;
+    background-color: $gris;
+}
+
+header #btn-menu .line::before {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 10px;
     width: 100%;
-    height: 3px;
-    background-color: $black;
-}
-
-header .nav .btn-menu span::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100%;
-    height: 3px;
-    background-color: $black;
-}
-
-header .nav .btn-menu span.active {
-    transform: rotate(-45deg);
-}
-
-header .nav .btn-menu span.active::before {
-    bottom: 0;
+    height: 2px;
+    background-color: $gris;
     transform: rotate(90deg);
 }
 
-header .nav .btn-menu span.active::after {
-    top: 0;
-    visibility: hidden;
+// ACTIVE DISPLAY NAV TO MOBILE
+.active-btn-toggle {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
 }
 
-
-
-@media screen and (min-width: $tablette) {
-
+// NAV BAR
+header .nav-bar {
+    position: absolute;
+    top: 50px;
+    left: -400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    transition: left 1s ease-in-out;
+    padding: 30px 0;
 }
 
-@media screen and (min-width: $tab-landscape) {
-    header .nav .btn-menu {
-        display: none;
-    }
+header .nav-bar .nav-link {
+    color: $gris;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
 
-    header .nav .ctn-links_L {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-}
-@media screen and (min-width: $laptop) {
-    
-}
-@media screen and (min-width: $desktop) {
-    
+header .nav-bar.active-nav {
+    left: 0;
+    transition: left 1s ease-in-out;
 }

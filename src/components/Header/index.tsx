@@ -6,37 +6,21 @@ import './style.scss';
 const Header = ({ siteTitle }) => {
     return (
         <header>
-            <nav className="nav">
-                <div className="nav-logo">
-                    <span>B.G</span>
-                </div>
-                <div className="ctn-links_L">
-                    <Link to="#" className="nav-link">Accueil</Link>
-                    <Link to="#" className="nav-link">Bio</Link>
-                    <Link to="#" className="nav-link">Compétences</Link>
-                    <Link to="#" className="nav-link">Portfolio</Link>
-                    <Link to="#" className="nav-link">Contact</Link>
-                </div>
-                
-                <button
-                    type="button"
-                    className="btn-menu"
-                    onClick={
-                        () => {
-                            document.querySelector('.ctn-links').classList.toggle('opened');
-                            document.querySelector('.btn-menu span').classList.toggle('active');
-                        }
-                    }>
-                    <span></span>
-                </button>                
-            </nav>
-            <div className="ctn-links">
-                <Link to="#" className="nav-link">Accueil</Link>
-                <Link to="#" className="nav-link">Bio</Link>
-                <Link to="#" className="nav-link">Compétences</Link>
-                <Link to="#" className="nav-link">Portfolio</Link>
-                <Link to="#" className="nav-link">Contact</Link>
-            </div>
+           <div className="logo">
+               <span>B.G</span>
+           </div>
+           <div id="btn-menu" onClick={ () => {
+               document.getElementById('btn-menu').classList.toggle('active-btn-toggle');
+               document.querySelector('.nav-bar').classList.toggle('active-nav');
+           } }>
+               <div className="line"></div>
+           </div>
+           <nav className="nav-bar">
+               <Link to="#" className="nav-link">Accueil</Link>
+               <Link to="#" className="nav-link">Bio</Link>
+               <Link to="#" className="nav-link">Compétences</Link>
+               <Link to="#" className="nav-link">Portfolio</Link>
+           </nav>
         </header>
     )
 }

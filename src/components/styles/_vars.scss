@@ -5,9 +5,9 @@
 ================================
 */
 $black : #0e0e0e;
-$white-txt : #F7F9F9;
-$bg-color: #F8F9F9;
 $gris: #E5E7E9;
+
+$bg : #202020;
 
 
 /*
@@ -15,10 +15,11 @@ $gris: #E5E7E9;
 ============ FONTS =============
 ================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@200;300;400;700&display=swap');
 
 // Font :
-$global-font: 'Playfair Display', serif;
+$global-font: 'Poppins', sans-serif;
+$parisFont: 'Parisienne', cursive;
 
 
 /*
